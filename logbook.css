@@ -1,0 +1,448 @@
+/* ==================== */
+/* 1. Estilos Globais e Reset */
+/* ==================== */
+
+:root {
+    --cor-principal: #6a0dad; /* Roxo vibrante (blueviolet) */
+    --cor-secundaria: #32a852; /* Verde para destaque */
+    --cor-fundo: #1c1c1c; /* Preto escuro */
+    --cor-texto: #f0f0f0; /* Branco suave */
+    --cor-card-fundo: #2a2a2a;
+    --cor-borda: #444;
+    --cor-link-hover: #9c40ff;
+    --espacamento-padrao: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--cor-link-hover);
+}
+
+/* ==================== */
+/* 2. Cabeçalho (Header) */
+/* ==================== */
+
+header {
+    background-color: #0d0d0d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px var(--espacamento-padrao);
+    border-bottom: 3px solid var(--cor-principal);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap; /* Permite que os itens quebrem em telas menores */
+}
+
+.logo h1 {
+    font-size: 1.8em;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li a {
+    color: var(--cor-texto);
+    padding: 10px 15px;
+    display: block;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+header nav ul li a:hover {
+    background-color: var(--cor-principal);
+    color: #fff;
+}
+
+.user-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.user-actions input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    background-color: #222;
+    color: var(--cor-texto);
+}
+
+button {
+    padding: 8px 15px;
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--cor-link-hover);
+}
+
+/* Estilo para botões menores dentro dos cards */
+.cta-button.small {
+    padding: 6px 10px;
+    font-size: 0.85em;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+
+/* ==================== */
+/* 3. Main e Seções */
+/* ==================== */
+
+main {
+    padding: 0 var(--espacamento-padrao);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 40px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-secundaria);
+    padding-left: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--cor-texto);
+}
+
+/* Hero Section (Destaque) */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagens/hero_background.jpg'); /* Substitua a imagem */
+    background-size: cover;
+    background-position: center;
+    padding: 60px 40px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hero h2 {
+    color: white;
+    font-size: 2.5em;
+    border: none;
+    padding-left: 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.cta-button {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #4cd174; /* Tonalidade mais clara do verde */
+}
+
+/* ==================== */
+/* 4. Filtros Inteligentes */
+/* ==================== */
+
+.filtros-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#filtros-inteligentes button {
+    background-color: var(--cor-card-fundo);
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-principal);
+    padding: 10px 15px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#filtros-inteligentes button:hover {
+    background-color: var(--cor-principal);
+    transform: translateY(-2px);
+}
+
+/* ==================== */
+/* 5. Catálogo de Jogos */
+/* ==================== */
+
+.game-list {
+    display: grid;
+    /* 1 coluna para telas pequenas, 2 para tablet, 3 para desktop */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: var(--espacamento-padrao);
+}
+
+.game-card {
+    background-color: var(--cor-card-fundo);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: row; /* Layout horizontal para o card */
+    min-height: 220px;
+}
+
+.game-card img {
+    width: 150px; /* Largura fixa para a imagem */
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0; /* Não permite que a imagem encolha */
+}
+
+.game-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-info h3 {
+    margin-top: 0;
+    color: var(--cor-principal);
+}
+
+.game-card .nicho {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.game-card .sinopse {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    flex-grow: 1; /* Permite que a sinopse ocupe espaço livre */
+}
+
+.game-card .rating {
+    font-weight: bold;
+    color: gold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.game-card .add-backlog {
+    background-color: #555;
+    color: white;
+    align-self: flex-start; /* Alinha o botão à esquerda */
+}
+
+.game-card .add-backlog:hover {
+    background-color: #777;
+}
+
+/* ==================== */
+/* 6. Comunidade */
+/* ==================== */
+
+.community-features {
+    display: flex;
+    gap: var(--espacamento-padrao);
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    background-color: var(--cor-card-fundo);
+    padding: 25px;
+    border-radius: 8px;
+    flex: 1; /* Distribui o espaço uniformemente */
+    min-width: 280px;
+    border-left: 5px solid var(--cor-principal);
+}
+
+.feature-box h3 {
+    color: var(--cor-secundaria);
+}
+
+/* ==================== */
+/* 7. Footer */
+/* ==================== */
+
+footer {
+    background-color: #0d0d0d;
+    text-align: center;
+    padding: 15px var(--espacamento-padrao);
+    margin-top: 40px;
+    font-size: 0.9em;
+    border-top: 1px solid var(--cor-borda);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ==================== */
+/* 8. Media Queries (Responsividade) */
+/* ==================== */
+
+/* Para telas menores que 768px (Tablets e Mobile) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin: 10px 0;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    header nav ul li a {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    .user-actions {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+    
+    .user-actions input[type="text"] {
+        flex-grow: 1;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+    
+    .hero h2 {
+        font-size: 1.8em;
+    }
+    
+    .game-list {
+        /* Permite que o grid use 1 coluna em telas menores, 
+           mas minmax garante que o card não fique menor que 280px */
+        grid-template-columns: 1fr; 
+    }
+    
+    .game-card {
+        flex-direction: column; /* Empilha imagem e info verticalmente */
+    }
+    
+    .game-card img {
+        width: 100%;
+        height: 180px;
+    }
+    
+    .game-info {
+        flex-grow: 1;
+    }
+
+    .community-features {
+        flex-direction: column;
+    }
+}
+
+/* Para telas muito pequenas (Mobile) */
+@media (max-width: 480px) {
+    main {
+        padding: 0 10px;
+    }
+    
+    .logo h1 {
+        font-size: 1.5em;
+    }
+    
+    .user-actions input[type="text"] {
+        font-size: 0.8em;
+    }
+    
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    header nav ul li {
+        margin-bottom: 5px;
+    }
+}
+
+/* Estilo para o formulário no final do Main */
+main form {
+    background-color: var(--cor-card-fundo);
+    padding: var(--espacamento-padrao);
+    border-radius: 8px;
+    margin-top: 40px;
+    max-width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+main form input[type="email"],
+main form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--cor-borda);
+    background-color: #333;
+    color: var(--cor-texto);
+    resize: vertical;
+}
+
+main form button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    background-color: var(--cor-secundaria);
+}
+
+main form button[type="submit"]:hover {
+    background-color: #4cd174;
+}

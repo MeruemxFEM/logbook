@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Catálogo de Jogos - O melhor de maneira simples</title>
+    <link rel="stylesheet" href="logbook.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1><span style="color: blueviolet;">Log</span>Book</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#catalogo">Catálogo Completo</a></li>
+                <li><a href="#curadoria">Curadoria</a></li>
+                <li><a href="#comunidade">Comunidade</a></li>
+                <li><a href="#assinatura">Assinatura Premium</a></li>
+                <li><a href="#minha lista">Minha lista </a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <input type="text" placeholder="Busca Semântica (ex: aventura relaxante)">
+            <button>Login</button>
+        </div>
+    </header>
+
+    <main>
+        
+        <section id="nicho-destaque" class="hero">
+            <h2>O Melhor do Indie Narrativo: Histórias que Marcam</h2>
+            <p>Descubra joias escondidas e jogos aclamados, focados na profundidade da trama e dos personagens.</p>
+            <a href="#curadoria" class="cta-button">Ver Curadoria da Semana</a>
+        </section>
+
+        <section id="filtros-inteligentes">
+            <h3>Filtrar por Caminho do Jogador</h3>
+            <div class="filtros-container">
+                <button data-filter="humor">Para um dia chuvoso (Emocional)</button>
+                <button data-filter="tempo">Aventuras Rápidas (< 1h)</button>
+                <button data-filter="dificuldade">Experiência Relaxante</button>
+                <button data-filter="estilo">Pixel Art</button>
+            </div>
+        </section>
+
+        <section id="catalogo">
+            <h2>Catálogo Completo</h2>
+            
+            <div class="game-list">
+                
+                <article class="game-card">
+                    <img src="imagens/jogo1_capa.jpg" alt="Capa do Jogo 1">
+                    <div class="game-info">
+                        <h3>Omori</h3>
+                        <p class="nicho">Indie | Aventura | R$37,00</p>
+                        <p class="sinopse">Explore um mundo estranho, repleto de amigos e inimigos peculiares. Navegue pelo vibrante e pelo mundano para desvendar um passado esquecido. Quando chegar a hora, o caminho que você escolheu determinará seu destino... e talvez o de outros também..</p>
+                        <span class="rating">⭐️ 4.8</span>
+                        <button class="add-backlog">Adicionar ao Backlog</button>
+                    </div>
+                </article>
+
+                <article class="game-card">
+                    <img src="omori.avif" alt="Capa do Jogo 2" width="150px">
+                    <div class="game-info">
+                        <h3>A Cidade de Neon</h3>
+                        <p class="nicho">Indie | RPG Tático | Assinatura Premium</p>
+                        <p class="sinopse">Ciberpunk com escolhas de diálogo impactantes.</p>
+                        <span class="rating">⭐️ 4.5</span>
+                        <a href="#detalhes-jogo2" class="cta-button small">Jogar Agora (Cloud)</a>
+                    </div>
+                </article>
+
+                </div>
+        </section>
+        
+        <section id="comunidade">
+            <h2>A Comunidade GameVerse</h2>
+            <div class="community-features">
+                <article class="feature-box">
+                    <h3>Minhas Listas</h3>
+                    <p>Veja e compartilhe listas de jogos criadas por outros curadores e amigos.</p>
+                    <a href="#">Explorar Listas</a>
+                </article>
+                <article class="feature-box">
+                    <h3>Torneio Semanal</h3>
+                    <p>Participe de competições no nosso jogo em destaque: "O Desafio da Montanha".</p>
+                    <a href="#">Inscreva-se</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="recomendacoes">
+            <h2>Recomendado para Você</h2>
+            <p>Com base nos seus últimos jogos (O Segredo da Floresta e Celeste), sugerimos:</p>
+            
+            <div class="game-list recomendados">
+                 <article class="game-card">...</article>
+                 <article class="game-card">...</article>
+            </div>
+        </section>
+        <!-- modify this form HTML and place wherever you want your form -->
+<form
+  action="https://formspree.io/f/xanljjky"
+  method="POST"
+>
+  <label>
+    Seu email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sua Empresa de Catálogo de Jogos. | <a href="#">Termos de Uso</a></p>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>
