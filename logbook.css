@@ -1,448 +1,602 @@
-/* ==================== */
-/* 1. Estilos Globais e Reset */
-/* ==================== */
-
-:root {
-    --cor-principal: #6a0dad; /* Roxo vibrante (blueviolet) */
-    --cor-secundaria: #32a852; /* Verde para destaque */
-    --cor-fundo: #1c1c1c; /* Preto escuro */
-    --cor-texto: #f0f0f0; /* Branco suave */
-    --cor-card-fundo: #2a2a2a;
-    --cor-borda: #444;
-    --cor-link-hover: #9c40ff;
-    --espacamento-padrao: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: 0;
 }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+h3{
+    color: rgba(7, 212, 195, 0.644);
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    line-height: 1.6;
+   
+  background: linear-gradient(290deg,#AE36CC,#ae36cc) ;
+  height: 100vh;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);font-family:
+   "Poppins", sans-serif;
+
+}
+header{
+     display: flex ;
+     justify-content: center;
+     align-items: center;
+     padding: 30px 10%;
+     background-color: rgb(170, 79, 255);
+     
+     
+}
+header h1 {
+    font-size: 30px;
 }
 
-a {
-    color: var(--cor-principal);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: var(--cor-link-hover);
-}
-
-/* ==================== */
-/* 2. Cabeçalho (Header) */
-/* ==================== */
-
-header {
-    background-color: #0d0d0d;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px var(--espacamento-padrao);
-    border-bottom: 3px solid var(--cor-principal);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    flex-wrap: wrap; /* Permite que os itens quebrem em telas menores */
-}
-
-.logo h1 {
-    font-size: 1.8em;
-}
-
-header nav ul {
+.nav{
+    display: flex ;
     list-style: none;
-    display: flex;
+    
 }
 
-header nav ul li a {
-    color: var(--cor-texto);
-    padding: 10px 15px;
-    display: block;
-    font-weight: bold;
-    border-radius: 5px;
+ .nav>li{ /* espaço entre as palavras "centrais " do menu */
+    margin-left: 25px;
+ }
+
+
+ 
+ 
+.game-card {  /* espaçamento entre os jogos */
+   
+    display: flex; 
+    
+    align-items: flex-start; 
+    gap: 16px;
+    border: 1px solid #810f81;
+    padding: 15px;
+    
 }
 
-header nav ul li a:hover {
-    background-color: var(--cor-principal);
-    color: #fff;
+
+ .game-card {  /* parte horizontal do visual para deixar eles de ladinho papai PORFAVOR ABRAAO DO FUTURO NÃO MEXA MAIS NESSA PARTE DO CODIGO */
+    display: flex; 
+    width: 45%; 
+    background-color: #eeeeee; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    padding: var(--spacing-sm); 
 }
 
-.user-actions {
-    display: flex;
-    gap: 10px;
+.game-list {
+    display: flex  ;
+    flex-wrap: wrap; 
+    gap: 30px ;
 }
 
-.user-actions input[type="text"] {
-    padding: 8px 12px;
-    border: 1px solid var(--cor-borda);
-    border-radius: 5px;
-    background-color: #222;
-    color: var(--cor-texto);
+.game-list {
+    display: flex ;
+    
+    flex-wrap: wrap; 
+    gap: gap 30px;
 }
 
-button {
-    padding: 8px 15px;
-    background-color: var(--cor-principal);
-    color: white;
+
+
+button, .cta-button {
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 10px;
     cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
-button:hover {
-    background-color: var(--cor-link-hover);
+.add-backlog { /* mudar a cor do balao do baixar do omori */
+   background-color: #34495e; 
+  color: white;           
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  padding: 12px 25px; 
+  border-radius: 8px;
+  border: 2px solid #34495e; 
+  cursor: pointer; 
+  text-align: center;
+}
+.add-backlog:hover {/* mudar a corzinha do balao do adicionar ao backlog quando eu passar o mouse */
+  background-color: #1abc9c; 
+  color: #333;             
+  border: 2px solid #16a085;
 }
 
-/* Estilo para botões menores dentro dos cards */
-.cta-button.small {
-    padding: 6px 10px;
-    font-size: 0.85em;
-    margin-top: 10px;
-    display: inline-block;
+
+.jogar-cloud { /*mudança da cor do balo do jogar no cloud*/ 
+ 
+  background-color: #34495e; 
+  color: white;           
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  padding: 12px 25px; 
+  border-radius: 8px;
+  border: 2px solid #34495e; 
+  cursor: pointer; 
+  text-align: center;
 }
 
 
-/* ==================== */
-/* 3. Main e Seções */
-/* ==================== */
-
-main {
-    padding: 0 var(--espacamento-padrao);
-    max-width: 1200px;
-    margin: 0 auto;
+.jogar-cloud:hover {/* mudar a corzinha do balao do jogar no cloud quando eu passar o mouse */
+  background-color: #1abc9c; 
+  color: #333;             
+  border: 2px solid #16a085; 
+}
+.curadoria-semanal{ /*mudança da cor do balao*/ 
+ 
+  background-color: #34495e; 
+  color: white;           
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  padding: 12px 25px; 
+  border-radius: 8px;
+  border: 2px solid #34495e; 
+  cursor: pointer; 
+  text-align: center;
 }
 
-section {
-    padding: 40px 0;
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--cor-borda);
+
+.curadoria-semanal:hover {/* mudar a corzinha do balao do jogar  quando eu passar o mouse */
+  background-color: #1abc9c; 
+  color: #333;             
+  border: 2px solid #16a085; 
 }
 
-section:last-of-type {
-    border-bottom: none;
+.cta-button-Assinar{ /*mudança da cor do balao*/ 
+ 
+  background-color: #34495e; 
+  color: white;           
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  padding: 12px 25px; 
+  border-radius: 8px;
+  border: 2px solid #34495e; 
+  cursor: pointer; 
+  text-align: center;
 }
 
-h2 {
-    font-size: 2em;
-    color: var(--cor-principal);
-    margin-bottom: 20px;
-    border-left: 5px solid var(--cor-secundaria);
-    padding-left: 10px;
+
+.cta-button-Assinar:hover {/* mudar a corzinha do balao do jogar  quando eu passar o mouse */
+  background-color: #1abc9c; 
+  color: #333;             
+  border: 2px solid #16a085; 
 }
 
-h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    color: var(--cor-texto);
+.cta-button-Explorar{ /*mudança da cor do balao*/ 
+ 
+  background-color: #34495e; 
+  color: white;           
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  padding: 12px 25px; 
+  border-radius: 8px;
+  border: 2px solid #34495e; 
+  cursor: pointer; 
+  text-align: center;
 }
 
-/* Hero Section (Destaque) */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagens/hero_background.jpg'); /* Substitua a imagem */
-    background-size: cover;
-    background-position: center;
-    padding: 60px 40px;
-    border-radius: 8px;
+
+.cta-button-Explorar:hover {/* mudar a corzinha do balao do jogar  quando eu passar o mouse */
+  background-color: #1abc9c; 
+  color: #333;             
+  border: 2px solid #16a085; 
+} 
+
+.cta-button-lista{ /*mudança da cor do balao*/ 
+ 
+  background-color: #34495e; 
+  color: white;           
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  padding: 5px 15px; 
+  font-size: 14px;
+  border-radius: 8px;
+  border: 2px solid #34495e; 
+  cursor: pointer; 
+  text-align: center;
+}
+
+
+.cta-button-lista:hover {/* mudar a corzinha do balao do jogar  quando eu passar o mouse */
+  background-color: #1abc9c; 
+  color: #333;             
+  border: 2px solid #16a085; 
+}
+.cta-button-inscreva{ /*mudança da cor do balao*/ 
+ 
+  background-color: #34495e; 
+  color: white;           
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  padding: 12px 25px; 
+  border-radius: 8px;
+  border: 2px solid #34495e; 
+  cursor: pointer; 
+  text-align: center;
+}
+.cta-button-inscreva:hover {/* mudar a corzinha do balao do jogar  quando eu passar o mouse */
+  background-color: #1abc9c; 
+  color: #333;             
+  border: 2px solid #16a085; 
+} 
+
+.submit{ /*mudança da cor do balao*/ 
+ 
+  background-color: #7332c9; 
+  color: white;           
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  padding: 12px 25px; 
+  border-radius: 8px;
+  border: 2px solid #34495e; 
+  cursor: pointer; 
+  text-align: center;
+}
+.submit:hover {/* mudar a corzinha do balao do jogar  quando eu passar o mouse */
+  background-color: #1abc9c; 
+  color: #333;             
+  border: 2px solid #16a085; 
+} 
+.logar{ /*mudança da cor do balao*/ 
+ 
+  background-color: #34495e; 
+  color: white;           
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  padding: 12px 25px; 
+  border-radius: 8px;
+  border: 2px solid #34495e; 
+  cursor: pointer; 
+  text-align: center;
+}
+.logar:hover {/* mudar a corzinha do balao do jogar  quando eu passar o mouse */
+  background-color: #1abc9c; 
+  color: #333;             
+  border: 2px solid #16a085; 
+} 
+
+
+
+
+
+/*menu de navegação*/
+
+#nicho-destaque {
+    /* Estilo da seção principal (Hero) */
     text-align: center;
-    margin-top: 20px;
+    padding: var(--spacing-lg) 0;
+    margin-bottom: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.1); /* Um fundo suave */
+    border-radius: 12px;
+    color: var(--light-text);
 }
 
-.hero h2 {
-    color: white;
+#nicho-destaque h2 {
     font-size: 2.5em;
-    border: none;
-    padding-left: 0;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
 }
 
-.hero p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    color: #ccc;
+#nicho-destaque p {
+    font-size: 1.1em;
+    margin-bottom: var(--spacing-md);
 }
 
-.cta-button {
-    background-color: var(--cor-secundaria);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: bold;
-    display: inline-block;
+/* Ajustando o h3 para o corpo */
+h3 {
+    color: var(--secondary-color);
+    font-size: 1.5em;
+    margin-bottom: var(--spacing-md);
 }
 
-.cta-button:hover {
-    background-color: #4cd174; /* Tonalidade mais clara do verde */
+/* Estilização dos Filtros */
+#filtros-inteligentes {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
 }
-
-/* ==================== */
-/* 4. Filtros Inteligentes */
-/* ==================== */
 
 .filtros-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
+    gap: var(--spacing-sm);
 }
 
-#filtros-inteligentes button {
-    background-color: var(--cor-card-fundo);
-    color: var(--cor-texto);
-    border: 1px solid var(--cor-principal);
-    padding: 10px 15px;
-    transition: background-color 0.2s, transform 0.2s;
+/* Ajuste nos botões de filtro para não ficarem com padding excessivo (herdam de .cta-button-Explorar) */
+#filtros-inteligentes .cta-button-Explorar {
+    /* Diminuindo um pouco os botões de filtro para que caibam mais */
+    padding: 10px 20px;
+    font-size: 14px;
 }
 
-#filtros-inteligentes button:hover {
-    background-color: var(--cor-principal);
-    transform: translateY(-2px);
-}
 
-/* ==================== */
-/* 5. Catálogo de Jogos */
-/* ==================== */
 
-.game-list {
-    display: grid;
-    /* 1 coluna para telas pequenas, 2 para tablet, 3 para desktop */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: var(--espacamento-padrao);
-}
+
+
+
+
+
+
+
+
+/* Jogos*/
+
 
 .game-card {
-    background-color: var(--cor-card-fundo);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* ajustar os jogos em geral*/
+    width: calc(50% - 15px); /* Deixa eles um do aldo do outro */
     display: flex;
-    flex-direction: row; /* Layout horizontal para o card */
-    min-height: 220px;
+    align-items: flex-start; 
+    gap: 16px;
+    border: 1px solid var(--primary-color);
+    padding: var(--spacing-md);
+    background-color: var(--bg-card); 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+    overflow: hidden;
+    
 }
 
 .game-card img {
-    width: 150px; /* Largura fixa para a imagem */
-    height: 100%;
-    object-fit: cover;
-    flex-shrink: 0; /* Não permite que a imagem encolha */
+    /* a imagem se ajusta bem */
+    width: 120px; 
+    height: 180px; 
+    object-fit: cover; /* não deixa a imagem destorce */
+    border-radius: 4px;
+    flex-shrink: 0; /* não deixa a imagem encolhher e ficar achatada */
 }
 
-.game-info {
-    padding: 15px;
+.game-info { /* botao de comprar e jogar */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: var(--spacing-xs);
 }
 
-.game-info h3 {
-    margin-top: 0;
-    color: var(--cor-principal);
-}
 
-.game-card .nicho {
+
+.nicho {
+    font-weight: 600;
+    color: var(--primary-color);
     font-size: 0.9em;
-    color: #aaa;
-    margin-bottom: 10px;
-    font-style: italic;
 }
 
-.game-card .sinopse {
+.sinopse { /* igualar os baloes */
     font-size: 0.9em;
-    margin-bottom: 10px;
-    flex-grow: 1; /* Permite que a sinopse ocupe espaço livre */
+    margin-bottom: var(--spacing-sm);
 }
 
-.game-card .rating {
-    font-weight: bold;
+.rating { /* cor da nota*/
+    font-weight: 700;
     color: gold;
-    display: block;
-    margin-bottom: 10px;
+    margin-bottom: var(--spacing-sm);
+}
+ 
+footer {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    margin-top: var(--spacing-lg);
 }
 
-.game-card .add-backlog {
-    background-color: #555;
-    color: white;
-    align-self: flex-start; /* Alinha o botão à esquerda */
+footer a {
+    color: var(--secondary-color);
 }
 
-.game-card .add-backlog:hover {
-    background-color: #777;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Formulario de ajuda  */
+form {
+    max-width: 600px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-lg);
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
 }
 
-/* ==================== */
-/* 6. Comunidade */
-/* ==================== */
+form label {
+    font-weight: 500;
+    color: var(--dark-text);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+form input[type="email"],
+form input[type="message"] {
+    padding: var(--spacing-sm);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* minha lista e torneio semanal */
+
+#comunidade {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+}
 
 .community-features {
     display: flex;
-    gap: var(--espacamento-padrao);
-    flex-wrap: wrap;
+    justify-content: center; /* Centraliza as caixas */
+    gap: var(--spacing-md); /* Espaçamento entre as caixas */
+    flex-wrap: wrap; /* Garante que quebrem a linha em telas pequenas */
+    margin-top: var(--spacing-md);
 }
 
 .feature-box {
-    background-color: var(--cor-card-fundo);
-    padding: 25px;
-    border-radius: 8px;
-    flex: 1; /* Distribui o espaço uniformemente */
-    min-width: 280px;
-    border-left: 5px solid var(--cor-principal);
+    /* Estilo de cartão para as features */
+    flex: 1 1 45%; /* Permite que cada caixa ocupe cerca de 45% da largura (2 por linha) */
+    max-width: 450px; /* Limita o tamanho em telas grandes */
+    
+    background-color: var(--light-text); /* Fundo branco ou claro */
+    color: var(--dark-text);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra mais destacada */
+    
+    /* Novo: Adiciona um efeito de borda/cor chamativo */
+    border-left: 5px solid var(--secondary-color); 
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse para dar vida */
+.feature-box:hover {
+    transform: translateY(-5px); /* Levanta o cartão */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .feature-box h3 {
-    color: var(--cor-secundaria);
+    font-size: 1.8em;
+    color: var(--primary-color); /* Usa a cor roxa para o título */
+    margin-bottom: var(--spacing-sm);
+    border-bottom: 2px solid rgba(174, 54, 204, 0.2); /* Linha divisória */
+    padding-bottom: var(--spacing-xs);
 }
 
-/* ==================== */
-/* 7. Footer */
-/* ==================== */
+.feature-box p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+}
 
-footer {
-    background-color: #0d0d0d;
+
+.feature-box button {
+    margin-top: var(--spacing-sm);
+    width: 100%; /* Botão com largura total para preencher a caixa */
+    display: block; /* Garante que o width: 100% funcione */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* recomendação*/
+
+
+#recomendacoes {
+    padding: var(--spacing-lg) 0; /* espaçamento */
+    margin-bottom: var(--spacing-lg); /* divisão */
+}
+
+#recomendacoes h2 {
     text-align: center;
-    padding: 15px var(--espacamento-padrao);
-    margin-top: 40px;
-    font-size: 0.9em;
-    border-top: 1px solid var(--cor-borda);
+    font-size: 2em;
+    color: var(--dark-text);/* cor da letra*/
+    margin-bottom: var(--spacing-sm); /* espaçamento do título */
 }
 
-footer p {
-    margin: 0;
+#recomendacoes > p {
+    text-align: center;
+    font-size: 1.1em;
+    color: var(--dark-text); /* cor da letra */
+    margin-bottom: var(--spacing-md); /* espaçamento de baixo do texto */
+    font-style: italic; 
 }
 
-/* ==================== */
-/* 8. Media Queries (Responsividade) */
-/* ==================== */
-
-/* Para telas menores que 768px (Tablets e Mobile) */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header nav {
-        margin: 10px 0;
-    }
-
-    header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    header nav ul li a {
-        padding: 8px 10px;
-        font-size: 0.9em;
-    }
-
-    .user-actions {
-        width: 100%;
-        margin-top: 10px;
-        justify-content: space-between;
-    }
-    
-    .user-actions input[type="text"] {
-        flex-grow: 1;
-    }
-
-    .hero {
-        padding: 40px 20px;
-    }
-    
-    .hero h2 {
-        font-size: 1.8em;
-    }
-    
-    .game-list {
-        /* Permite que o grid use 1 coluna em telas menores, 
-           mas minmax garante que o card não fique menor que 280px */
-        grid-template-columns: 1fr; 
-    }
-    
-    .game-card {
-        flex-direction: column; /* Empilha imagem e info verticalmente */
-    }
-    
-    .game-card img {
-        width: 100%;
-        height: 180px;
-    }
-    
-    .game-info {
-        flex-grow: 1;
-    }
-
-    .community-features {
-        flex-direction: column;
-    }
+/* layout da lista de recomendações*/
+.game-list.recomendados {
+    display: flex;
+    flex-direction: column; /* Coloca os conteiner/baloes em lista vertical */
+    gap: var(--spacing-sm); /* Espaçamento pequeno entre as recomendações */
 }
 
-/* Para telas muito pequenas (Mobile) */
-@media (max-width: 480px) {
-    main {
-        padding: 0 10px;
-    }
+.game-list.recomendados .game-card {
     
-    .logo h1 {
-        font-size: 1.5em;
-    }
+    width: 100%; /* tamnho que pega na tela*/
+    border: 1px solid #ccc; /* Borda mais redonda e cor*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra  */
+    padding: var(--spacing-md);
+    transition: background-color 0.9s ease; /* Transição de cor com o mouse*/
     
-    .user-actions input[type="text"] {
-        font-size: 0.8em;
-    }
     
-    header nav ul {
-        display: block;
-        text-align: center;
-    }
-
-    header nav ul li {
-        margin-bottom: 5px;
-    }
+    display: block; /* Reajustar os comandos flex pra ficar tudo ok */
 }
 
-/* Estilo para o formulário no final do Main */
-main form {
-    background-color: var(--cor-card-fundo);
-    padding: var(--espacamento-padrao);
-    border-radius: 8px;
-    margin-top: 40px;
-    max-width: 50px;
-    margin-left: auto;
-    margin-right: auto;
+/* Efeito ao passar o mouse para indicar que é um item individual */
+.game-list.recomendados .game-card:hover {
+    background-color: #f5f5f5; /* muda a cor dps que o mouse sai */
+    border-color: var(--secondary-color); /* Realça a borda */
 }
 
-main form label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+/* garante que o texto de recomendação seja legível */
+.game-list.recomendados .game-card {
+    font-size: 1em;
+    line-height: 1.6; /* Espaçamento entre linhas */
 }
 
-main form input[type="email"],
-main form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid var(--cor-borda);
-    background-color: #333;
-    color: var(--cor-texto);
-    resize: vertical;
-}
 
-main form button[type="submit"] {
-    display: block;
-    width: 100%;
-    margin-top: 15px;
-    background-color: var(--cor-secundaria);
-}
 
-main form button[type="submit"]:hover {
-    background-color: #4cd174;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
